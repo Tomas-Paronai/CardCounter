@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CardCounter</string>
+
+    <string name="play_button">Play</string>
+    <string name="score_button">Scores</string>
+    <string name="exit_button">Exit</string>
+
+    <string name="num0_button">0</string>
+    <string name="num1_button">1</string>
+    <string name="num2_button">2</string>
+    <string name="num3_button">3</string>
+    <string name="num4_button">4</string>
+    <string name="num5_button">5</string>
+    <string name="num6_button">6</string>
+    <string name="num7_button">7</string>
+    <string name="num8_button">8</string>
+    <string name="num9_button">9</string>
+    <string name="num_delete_button">Del</string>
+    <string name="num_confirm_button">OK</string>
+    <string name="num_negative_button">-</string>
+
+</resources>

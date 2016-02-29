@@ -13,8 +13,8 @@
                 android:top="5dp"
                 android:bottom="5dp"/>
             <size
-                android:height="20dp"
-                android:width="20dp"/>
+                android:height="40dp"
+                android:width="40dp"/>
         </shape>
     </item>
     <item android:state_pressed="false">
@@ -30,8 +30,8 @@
                 android:top="5dp"
                 android:bottom="5dp"/>
             <size
-                android:height="20dp"
-                android:width="20dp"/>
+                android:height="40dp"
+                android:width="40dp"/>
 
         </shape>
     </item>

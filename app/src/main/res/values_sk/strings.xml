@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">CardCounter</string>
-
-    <string name="play_button">Hrat</string>
-    <string name="score_button">Vysledky</string>
-    <string name="exit_button">Opustit</string>
-</resources>

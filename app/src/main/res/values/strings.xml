@@ -19,4 +19,7 @@
     <string name="num_confirm_button">OK</string>
     <string name="num_negative_button">-</string>
 
+    <string name="result_ok">Well done!</string>
+    <string name="result_wrong">You are wrong!</string>
+
 </resources>

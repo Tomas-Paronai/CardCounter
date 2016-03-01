@@ -1,9 +1,11 @@
 package parohyapps.cardcounter.core;
 
+import java.io.Serializable;
+
 /**
  * Created by tomas on 3/1/2016.
  */
-public class Score {
+public class Score implements Serializable{
 
     private int score;
     private String name;

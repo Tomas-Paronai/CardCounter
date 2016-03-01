@@ -1,5 +1,6 @@
 package parohyapps.cardcounter;
 
+import android.content.DialogInterface;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,6 @@ public class PlayActivity extends AppCompatActivity {
 
         game = new Game();
         generateGameState();
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     private void generateGameState(){
@@ -181,20 +181,23 @@ public class PlayActivity extends AppCompatActivity {
             }
 
             if(game.isGameOver()){
-                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-                DialogFragment saveScoreDialog = new SaveScore();
-                saveScoreDialog.setRetainInstance(true);
-
-                Bundle scoreBundle = new Bundle();
-                scoreBundle.putInt("SCORE",game.getScore());
-                saveScoreDialog.setArguments(scoreBundle);
-
-                saveScoreDialog.show(getSupportFragmentManager(),"TAG");
+                dialogOn();
             }
             else{
                 generateGameState();
             }
         }
+    }
+
+    private void dialogOn() {
+        DialogFragment saveScoreDialog = new SaveScore();
+        saveScoreDialog.setRetainInstance(true);
+
+        Bundle scoreBundle = new Bundle();
+        scoreBundle.putInt("SCORE", game.getScore());
+        saveScoreDialog.setArguments(scoreBundle);
+
+        saveScoreDialog.show(getSupportFragmentManager(),"TAG");
     }
 
     public void helpMe(View v){

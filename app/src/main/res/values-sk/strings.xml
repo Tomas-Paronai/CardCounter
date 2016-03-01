@@ -1,11 +1,11 @@
 <resources>
     <!-- TITLE -->
-    <string name="app_name">Card Counter</string>
+    <string name="app_name">Pocitadlo Kariet</string>
 
     <!-- MENU -->
-    <string name="play_button">Play</string>
-    <string name="score_button">Scores</string>
-    <string name="exit_button">Exit</string>
+    <string name="play_button">Hrat</string>
+    <string name="score_button">Vysledky</string>
+    <string name="exit_button">Opustit</string>
 
     <!-- KEYBOARD -->
     <string name="num0_button">0</string>
@@ -23,14 +23,14 @@
     <string name="num_negative_button">-</string>
 
     <!-- GAME MESSAGE -->
-    <string name="result_ok">Well done!</string>
-    <string name="result_wrong">You are wrong!</string>
+    <string name="result_ok">Vyborne!</string>
+    <string name="result_wrong">Zla odpoved!</string>
 
     <!-- DIALOG -->
-    <string name="cancel_save">Cancel</string>
-    <string name="confirm_save">Save</string>
+    <string name="cancel_save">Zrusit</string>
+    <string name="confirm_save">Uloz</string>
 
     <!-- SCORE -->
-    <string name="score_header">High Score</string>
+    <string name="score_header">Najlepsie vysledky</string>
 
 </resources>

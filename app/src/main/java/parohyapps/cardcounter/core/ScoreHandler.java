@@ -1,5 +1,7 @@
 package parohyapps.cardcounter.core;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -37,11 +40,12 @@ public class ScoreHandler {
         if(scoreArray == null){
             scoreArray = new ArrayList<>();
         }
-
+        load();
     }
 
     public void add(Score score){
         scoreArray.add(score);
+        Log.d("ADD SCORE",""+scoreArray.size());
         save();
         load();
     }
@@ -84,6 +88,22 @@ public class ScoreHandler {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
+            }
+        }
+        ascendScore();
+    }
+
+    private void ascendScore(){
+        if(scoreArray != null){
+            int max = scoreArray.size();
+            for(int i = 0; i <= max-1; i++){
+                for(int j = i; j < max-1; j++){
+                    if(scoreArray.get(i).getScore() < scoreArray.get(j).getScore()){
+                        Score tmp = scoreArray.get(i);
+                        scoreArray.set(i,scoreArray.get(j));
+                        scoreArray.set(j, tmp);
+                    }
+                }
             }
         }
     }

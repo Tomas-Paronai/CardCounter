@@ -34,29 +34,28 @@ public class ScoreHandler {
             }
         }
 
-        try {
-            FileInputStream inputStream = new FileInputStream(file);
-            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            //TODO read file to array
-
-            objectInputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (StreamCorruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(scoreArray == null){
+            scoreArray = new ArrayList<>();
         }
 
     }
 
-    public void save(){
+    public void add(Score score){
+        scoreArray.add(score);
+        save();
+        load();
+    }
+
+    private void save(){
         //TODO save file
         if(file != null){
             try{
                 FileOutputStream outputStream = new FileOutputStream(file);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
 
+                for(Score tmpScore : scoreArray){
+                   objectOutputStream.writeObject(tmpScore);
+                }
                 objectOutputStream.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -66,4 +65,30 @@ public class ScoreHandler {
         }
     }
 
+    private void load(){
+        scoreArray.clear();
+        if(file != null){
+            try {
+                FileInputStream inputStream = new FileInputStream(file);
+                ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+                //TODO read file to array
+                while(true){
+                    scoreArray.add((Score) objectInputStream.readObject());
+                }
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (StreamCorruptedException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public ArrayList<Score> getScoreList(){
+        return scoreArray;
+    }
 }

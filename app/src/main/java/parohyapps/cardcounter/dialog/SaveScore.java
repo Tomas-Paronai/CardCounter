@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,9 +12,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import parohyapps.cardcounter.R;
+import parohyapps.cardcounter.core.Score;
+import parohyapps.cardcounter.core.ScoreHandler;
 
 /**
  * Created by tomas on 3/1/2016.
@@ -26,7 +30,12 @@ public class SaveScore extends DialogFragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if(savedInstanceState != null && savedInstanceState.containsKey("SCORE")){
+            score = savedInstanceState.getInt("SCORE");
+        }
+        else if(getArguments() != null && getArguments().containsKey("SCORE")){
+            score = getArguments().getInt("SCORE");
+        }
     }
 
     @Override
@@ -36,6 +45,7 @@ public class SaveScore extends DialogFragment{
 
         View view = inflater.inflate(R.layout.save_score_dialog,null);
         ((TextView)view.findViewById(R.id.tw_dialog_score)).setText(String.valueOf(score));
+        final EditText input = (EditText) view.findViewById(R.id.et_dialog_name);
 
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
@@ -44,7 +54,11 @@ public class SaveScore extends DialogFragment{
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     //TODO save score & file
-                    getActivity().finish();
+                    if (input.getText().toString().length() > 0) {
+                        ScoreHandler handler = new ScoreHandler(Environment.getExternalStorageDirectory());
+                        handler.add(new Score(score,input.getText().toString()));
+                        getActivity().finish();
+                    }
                 }
             })
             .setNegativeButton(R.string.cancel_save, new DialogInterface.OnClickListener() {

@@ -184,6 +184,11 @@ public class PlayActivity extends AppCompatActivity {
                 getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
                 DialogFragment saveScoreDialog = new SaveScore();
                 saveScoreDialog.setRetainInstance(true);
+
+                Bundle scoreBundle = new Bundle();
+                scoreBundle.putInt("SCORE",game.getScore());
+                saveScoreDialog.setArguments(scoreBundle);
+
                 saveScoreDialog.show(getSupportFragmentManager(),"TAG");
             }
             else{

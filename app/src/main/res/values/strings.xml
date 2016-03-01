@@ -1,10 +1,13 @@
 <resources>
+    <!-- TITLE -->
     <string name="app_name">CardCounter</string>
 
+    <!-- MENU -->
     <string name="play_button">Play</string>
     <string name="score_button">Scores</string>
     <string name="exit_button">Exit</string>
 
+    <!-- KEYBOARD -->
     <string name="num0_button">0</string>
     <string name="num1_button">1</string>
     <string name="num2_button">2</string>
@@ -19,7 +22,12 @@
     <string name="num_confirm_button">OK</string>
     <string name="num_negative_button">-</string>
 
+    <!-- GAME MESSAGE -->
     <string name="result_ok">Well done!</string>
     <string name="result_wrong">You are wrong!</string>
+
+    <!-- DIALOG -->
+    <string name="cancel_save">Cancel</string>
+    <string name="confirm_save">Save</string>
 
 </resources>

@@ -18,6 +18,13 @@ public class Game {
     private boolean leftNegative;
     private boolean rightNegative;
 
+    private int score;
+    private int lives;
+
+    public Game()
+    {
+        lives = 3;
+    }
     public String getLeftCard(){
         leftCard = randInt(1,13);
         String result = "c"+getCardTypeString(leftCard)+"_of_"+getTypeString(randInt(0,3));
@@ -44,6 +51,25 @@ public class Game {
 
     public boolean isRightNegative(){
         return rightNegative;
+    }
+
+    public void addScore(int score){
+        this.score += score;
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public void takeLife(){
+        lives--;
+    }
+
+    public boolean isGameOver(){
+        if(lives <= 0){
+            return true;
+        }
+        return false;
     }
 
     private String getCardTypeString(int number){

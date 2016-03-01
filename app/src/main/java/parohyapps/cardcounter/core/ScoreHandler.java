@@ -37,7 +37,7 @@ public class ScoreHandler {
         try {
             FileInputStream inputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            //TODO read file
+            //TODO read file to array
 
             objectInputStream.close();
         } catch (FileNotFoundException e) {
@@ -51,10 +51,13 @@ public class ScoreHandler {
     }
 
     public void save(){
+        //TODO save file
         if(file != null){
             try{
                 FileOutputStream outputStream = new FileOutputStream(file);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+
+                objectOutputStream.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

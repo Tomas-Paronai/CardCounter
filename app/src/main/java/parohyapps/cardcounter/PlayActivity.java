@@ -68,7 +68,8 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void respondKeyboard(View v){
-        Log.d("RESPOND",v.toString());
+        //TODO sound
+        //TODO reset input
         EditText userInput = (EditText) findViewById(R.id.et_user_input);
         String origString = userInput.getText().toString();
         switch(v.getId()){

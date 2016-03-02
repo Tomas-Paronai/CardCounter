@@ -29,6 +29,8 @@
     <!-- DIALOG -->
     <string name="cancel_save">Zrusit</string>
     <string name="confirm_save">Uloz</string>
+    <string name="alert_cancel">Vysledky neulozene</string>
+    <string name="alert_confirm">Vysledky ulozene</string>
 
     <!-- SCORE -->
     <string name="score_header">Najlepsie vysledky</string>

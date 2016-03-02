@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -95,6 +94,7 @@ public class ScoreHandler {
 
     private void ascendScore(){
         if(scoreArray != null){
+            Log.d("LOAD FILE","ASCENDING");
             int max = scoreArray.size();
             for(int i = 0; i <= max-1; i++){
                 for(int j = i; j < max-1; j++){

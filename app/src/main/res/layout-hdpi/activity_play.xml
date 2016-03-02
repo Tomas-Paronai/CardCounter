@@ -8,16 +8,17 @@
     tools:context="parohyapps.cardcounter.PlayActivity"
     android:gravity="center_vertical">
 
+
     <TextView
         android:id="@+id/game_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@color/yellow"
         android:text="Hello World!"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
         android:visibility="invisible"/>
 
     <TextView
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/equation_view"
         android:layout_above="@+id/equation_view"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textColor="@color/yellow"
         android:text="5"/>
     <TextView
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/equation_view"
         android:layout_above="@+id/equation_view"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textColor="@color/yellow"
         android:text="5"/>
 
@@ -52,8 +53,8 @@
 
         <ImageView
             android:id="@+id/iw_left_card"
-            android:layout_width="80dp"
-            android:layout_height="120dp"
+            android:layout_width="220dp"
+            android:layout_height="350dp"
             android:scaleType="fitCenter"
             android:src="@drawable/c2_of_clubs"/>
 
@@ -62,14 +63,15 @@
             android:layout_height="wrap_content"
             android:textColor="@color/yellow"
             android:text="+"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:textSize="40sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
         <ImageView
             android:id="@+id/iw_right_card"
-            android:layout_width="80dp"
-            android:layout_height="120dp"
+            android:layout_width="220dp"
+            android:layout_height="350dp"
+            android:scaleType="fitCenter"
             android:src="@drawable/c2_of_clubs"/>
 
     </LinearLayout>
@@ -91,26 +93,31 @@
             android:textColor="@color/colorAccent"
             android:cursorVisible="false"
             android:textCursorDrawable="@color/colorAccent"
-            android:minWidth="70dp"
-            android:textSize="20sp"
+            android:minWidth="120dp"
+            android:textSize="30sp"
             android:gravity="center"
+            android:maxLength="3"
             android:text=""/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:minWidth="70dp"
+            android:minHeight="70dp"
+            android:scaleType="fitXY"
             android:background="@color/dark_grey"
             android:alpha="0.4"
             android:src="@drawable/help_ico"
-            android:onClick="helpMe"/>
+            android:onClick="helpMe"
+            android:soundEffectsEnabled="false"/>
 
     </LinearLayout>
 
 
     <GridLayout
         android:id="@+id/keyboard_view"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_view"
@@ -126,10 +133,12 @@
             android:textColor="@color/yellow"
             android:layout_column="0"
             android:layout_row="0"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
+            android:textSize="30sp"
             android:text="@string/num_delete_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_confirm"
             android:layout_width="wrap_content"
@@ -138,10 +147,11 @@
             android:textColor="@color/yellow"
             android:layout_column="0"
             android:layout_row="1"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num_confirm_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_negative"
             android:layout_width="wrap_content"
@@ -150,10 +160,11 @@
             android:textColor="@color/yellow"
             android:layout_column="4"
             android:layout_row="1"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num_negative_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num1"
             android:layout_width="wrap_content"
@@ -162,10 +173,11 @@
             android:textColor="@color/yellow"
             android:layout_column="1"
             android:layout_row="0"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num1_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num2"
             android:layout_width="wrap_content"
@@ -174,10 +186,11 @@
             android:textColor="@color/yellow"
             android:layout_column="2"
             android:layout_row="0"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num2_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num3"
             android:layout_width="wrap_content"
@@ -186,10 +199,11 @@
             android:textColor="@color/yellow"
             android:layout_column="3"
             android:layout_row="0"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num3_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num4"
             android:layout_width="wrap_content"
@@ -198,10 +212,11 @@
             android:textColor="@color/yellow"
             android:layout_column="1"
             android:layout_row="1"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num4_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num5"
             android:layout_width="wrap_content"
@@ -210,10 +225,11 @@
             android:textColor="@color/yellow"
             android:layout_column="2"
             android:layout_row="1"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num5_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num6"
             android:layout_width="wrap_content"
@@ -222,10 +238,11 @@
             android:textColor="@color/yellow"
             android:layout_column="3"
             android:layout_row="1"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num6_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num7"
             android:layout_width="wrap_content"
@@ -234,10 +251,11 @@
             android:textColor="@color/yellow"
             android:layout_column="1"
             android:layout_row="2"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num7_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num8"
             android:layout_width="wrap_content"
@@ -246,10 +264,11 @@
             android:textColor="@color/yellow"
             android:layout_column="2"
             android:layout_row="2"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num8_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
         <Button
             android:id="@+id/kb_num9"
             android:layout_width="wrap_content"
@@ -258,10 +277,11 @@
             android:textColor="@color/yellow"
             android:layout_column="3"
             android:layout_row="2"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num9_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
 
         <Button
             android:id="@+id/kb_num0"
@@ -271,10 +291,11 @@
             android:textColor="@color/yellow"
             android:layout_column="4"
             android:layout_row="0"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:minWidth="80dp"
+            android:minHeight="50dp"
             android:text="@string/num0_button"
-            android:onClick="respondKeyboard"/>
+            android:onClick="respondKeyboard"
+            android:soundEffectsEnabled="false"/>
     </GridLayout>
 
 </RelativeLayout>

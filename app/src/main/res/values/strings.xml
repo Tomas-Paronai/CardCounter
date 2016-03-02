@@ -29,6 +29,8 @@
     <!-- DIALOG -->
     <string name="cancel_save">Cancel</string>
     <string name="confirm_save">Save</string>
+    <string name="alert_cancel">Score not saved</string>
+    <string name="alert_confirm">Score saved</string>
 
     <!-- SCORE -->
     <string name="score_header">High Score</string>

@@ -14,9 +14,6 @@
                 android:right="5dp"
                 android:top="5dp"
                 android:bottom="5dp"/>
-            <size
-                android:width="120dp"
-                android:height="60dp"/>
         </shape>
     </item>
     <item android:state_pressed="false">
@@ -33,9 +30,6 @@
                 android:right="5dp"
                 android:top="5dp"
                 android:bottom="5dp"/>
-            <size
-                android:width="120dp"
-                android:height="60dp"/>
         </shape>
     </item>
 </selector>

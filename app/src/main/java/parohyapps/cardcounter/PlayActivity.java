@@ -1,13 +1,11 @@
 package parohyapps.cardcounter;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,13 +36,6 @@ public class PlayActivity extends AppCompatActivity {
 
         int leftNumber = game.getLeftCardNumber();
         int rightNumber = game.getRightCardNumber();
-
-        if(game.isLeftNegative()){
-            leftNumber *= -1;
-        }
-        if(game.isRightNegative()){
-            rightNumber *= -1;
-        }
 
         result = leftNumber + rightNumber;
 
@@ -168,17 +159,25 @@ public class PlayActivity extends AppCompatActivity {
 
     public void confirmResult(){
         EditText userInput = (EditText) findViewById(R.id.et_user_input);
-        TextView gameMessage = (TextView) findViewById(R.id.game_message);
+        final TextView gameMessage = (TextView) findViewById(R.id.game_message);
 
         if(!userInput.getText().toString().equals("")){
             if(userInput.getText().toString().equals(String.valueOf(getResult()))){
-                gameMessage.setText(getResources().getIdentifier("result_ok","string",getPackageName()));
+                gameMessage.setText(getResources().getIdentifier("result_ok", "string", getPackageName()));
                 game.addScore(Math.abs(result));
             }
             else{
                 gameMessage.setText(getResources().getIdentifier("result_wrong","string",getPackageName()));
                 game.takeLife();
             }
+            Log.d("GAME MESSAGE","Showing Message");
+            gameMessage.setVisibility(View.VISIBLE);
+            gameMessage.postDelayed(new Runnable(){
+                public void run(){
+                    gameMessage.setVisibility(View.INVISIBLE);
+                    Log.d("GAME MESSAGE","Hiding Message");
+                }
+            },3000);
 
             if(game.isGameOver()){
                 dialogOn();

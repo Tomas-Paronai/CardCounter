@@ -112,21 +112,11 @@ public class Game {
     private void setNegatives(int type){
         if(type == DIAMONDS || type == HEARTS){
             if(left){
-                leftNegative = true;
+                leftCard *= -1;
                 left = false;
             }
             else{
-                rightNegative = true;
-                left = true;
-            }
-        }
-        else{
-            if(left){
-                leftNegative = false;
-                left = false;
-            }
-            else{
-                rightNegative = false;
+                rightCard *= -1;
                 left = true;
             }
         }

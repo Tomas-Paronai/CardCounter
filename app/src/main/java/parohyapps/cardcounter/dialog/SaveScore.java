@@ -1,19 +1,18 @@
 package parohyapps.cardcounter.dialog;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.os.Environment;
-import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import parohyapps.cardcounter.R;
 import parohyapps.cardcounter.core.Score;
@@ -25,7 +24,6 @@ import parohyapps.cardcounter.core.ScoreHandler;
 public class SaveScore extends DialogFragment{
 
     private int score;
-    private Context con;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,8 +53,9 @@ public class SaveScore extends DialogFragment{
                 public void onClick(DialogInterface dialog, int which) {
                     //TODO save score & file
                     if (input.getText().toString().length() > 0) {
+                        Toast.makeText(getActivity(), getResources().getString(R.string.alert_confirm),Toast.LENGTH_SHORT).show();
                         ScoreHandler handler = new ScoreHandler(Environment.getExternalStorageDirectory());
-                        handler.add(new Score(score,input.getText().toString()));
+                        handler.add(new Score(score, input.getText().toString()));
                         getActivity().finish();
                     }
                 }
@@ -64,6 +63,7 @@ public class SaveScore extends DialogFragment{
             .setNegativeButton(R.string.cancel_save, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getActivity(), getResources().getString(R.string.alert_cancel),Toast.LENGTH_SHORT).show();
                     getActivity().finish();
                     SaveScore.this.getDialog().cancel();
                 }

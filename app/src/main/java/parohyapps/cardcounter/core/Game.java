@@ -65,6 +65,10 @@ public class Game {
         lives--;
     }
 
+    public int getLives(){
+        return lives;
+    }
+
     public boolean isGameOver(){
         if(lives <= 0){
             return true;

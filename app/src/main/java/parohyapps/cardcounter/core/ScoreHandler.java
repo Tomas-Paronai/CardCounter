@@ -50,7 +50,6 @@ public class ScoreHandler {
     }
 
     private void save(){
-        //TODO save file
         if(file != null){
             try{
                 FileOutputStream outputStream = new FileOutputStream(file);
@@ -74,7 +73,6 @@ public class ScoreHandler {
             try {
                 FileInputStream inputStream = new FileInputStream(file);
                 ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-                //TODO read file to array
                 while(true){
                     scoreArray.add((Score) objectInputStream.readObject());
                 }

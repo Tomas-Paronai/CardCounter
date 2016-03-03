@@ -25,6 +25,7 @@
     <!-- GAME MESSAGE -->
     <string name="result_ok">Well done!</string>
     <string name="result_wrong">You are wrong!</string>
+    <string name="lives_left">You have %1$d lives left!</string>
 
     <!-- DIALOG -->
     <string name="cancel_save">Cancel</string>

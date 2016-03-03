@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import parohyapps.cardcounter.core.Game;
 import parohyapps.cardcounter.dialog.SaveScore;
@@ -25,6 +28,10 @@ public class PlayActivity extends AppCompatActivity {
 
         game = new Game();
         generateGameState();
+
+        EditText input = (EditText) findViewById(R.id.et_user_input);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(input.getWindowToken(), 0);
     }
 
     private void generateGameState(){
@@ -60,7 +67,6 @@ public class PlayActivity extends AppCompatActivity {
 
     public void respondKeyboard(View v){
         //TODO sound
-        //TODO reset input
         EditText userInput = (EditText) findViewById(R.id.et_user_input);
         String origString = userInput.getText().toString();
         switch(v.getId()){
@@ -169,6 +175,7 @@ public class PlayActivity extends AppCompatActivity {
             else{
                 gameMessage.setText(getResources().getIdentifier("result_wrong","string",getPackageName()));
                 game.takeLife();
+                Toast.makeText(this,String.format(getResources().getString(R.string.lives_left),game.getLives()),Toast.LENGTH_SHORT).show();
             }
             Log.d("GAME MESSAGE","Showing Message");
             gameMessage.setVisibility(View.VISIBLE);

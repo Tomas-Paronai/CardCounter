@@ -51,7 +51,6 @@ public class SaveScore extends DialogFragment{
             .setPositiveButton(R.string.confirm_save, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    //TODO save score & file
                     if (input.getText().toString().length() > 0) {
                         Toast.makeText(getActivity(), getResources().getString(R.string.alert_confirm),Toast.LENGTH_SHORT).show();
                         ScoreHandler handler = new ScoreHandler(Environment.getExternalStorageDirectory());

@@ -1,11 +1,11 @@
 <resources>
     <!-- TITLE -->
-    <string name="app_name">Card Counter</string>
+    <string name="app_name">Kartya szamolo</string>
 
     <!-- MENU -->
-    <string name="play_button">Play</string>
-    <string name="score_button">Scores</string>
-    <string name="exit_button">Exit</string>
+    <string name="play_button">Jatek</string>
+    <string name="score_button">Eredmenyek</string>
+    <string name="exit_button">Kilepes</string>
 
     <!-- KEYBOARD -->
     <string name="num0_button">0</string>
@@ -23,18 +23,18 @@
     <string name="num_negative_button">-</string>
 
     <!-- GAME MESSAGE -->
-    <string name="result_ok">Well done!</string>
-    <string name="result_wrong">You are wrong!</string>
-    <string name="lives_left">You have %1$d lives left!</string>
+    <string name="result_ok">Gratulalok!</string>
+    <string name="result_wrong">Rossz valasz!</string>
+    <string name="lives_left">Mar csak %1$d van!</string>
 
     <!-- DIALOG -->
-    <string name="cancel_save">Cancel</string>
-    <string name="confirm_save">Save</string>
-    <string name="alert_cancel">Score not saved</string>
-    <string name="alert_confirm">Score saved</string>
+    <string name="cancel_save">Megse</string>
+    <string name="confirm_save">Mentes</string>
+    <string name="alert_cancel">Eredmenymentes megszuntetve.</string>
+    <string name="alert_confirm">Eredmeny elmentve.</string>
 
     <!-- SCORE -->
-    <string name="high_score_header">High Score</string>
-    <string name="normal_score_header">Score</string>
+    <string name="score_header">Legjobb eredmenyek</string>
+    <string name="normal_score_header">Eredmenyek</string>
 
 </resources>

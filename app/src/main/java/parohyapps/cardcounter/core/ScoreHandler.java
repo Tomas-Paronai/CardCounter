@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -87,26 +88,33 @@ public class ScoreHandler {
                 e.printStackTrace();
             }
         }
-        ascendScore();
+        //ascendScore();
     }
 
-    private void ascendScore(){
-        if(scoreArray != null){
+    private ArrayList<Score> ascendScore(ArrayList<Score> list){
+        ArrayList<Score> resultList = (ArrayList<Score>) list.clone();
+        if(resultList != null){
             Log.d("LOAD FILE","ASCENDING");
-            int max = scoreArray.size();
+            int max = resultList.size();
             for(int i = 0; i <= max-1; i++){
-                for(int j = i; j < max-1; j++){
-                    if(scoreArray.get(i).getScore() < scoreArray.get(j).getScore()){
-                        Score tmp = scoreArray.get(i);
-                        scoreArray.set(i,scoreArray.get(j));
-                        scoreArray.set(j, tmp);
+                for(int j = i; j < max; j++){
+                    if(list.get(i).getScore() < resultList.get(j).getScore()){
+                        Score tmp = resultList.get(i);
+                        resultList.set(i,list.get(j));
+                        resultList.set(j, tmp);
                     }
                 }
             }
         }
+
+        return resultList;
     }
 
-    public ArrayList<Score> getScoreList(){
+    public ArrayList<Score> getScoreList(boolean ascend){
+        if(ascend){
+            ArrayList<Score> ascList = scoreArray;
+            return ascendScore(ascList);
+        }
         return scoreArray;
     }
 }

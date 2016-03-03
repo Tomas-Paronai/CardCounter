@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/score_header_text_view"
+        android:id="@+id/score_fragment_header">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="1dp"
+            android:text="Menu"
+            android:textColor="@color/yellow"
+            android:textSize="17sp"
+            android:background="@drawable/menu_button"
+            android:layout_weight="0.2"
+            android:onClick="gameMenu"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/yellow"
+            android:text="@string/normal_score_header"
+            android:id="@+id/tw_score_header"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="0.8"/>
+    </LinearLayout>
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/score_list"
+        android:layout_below="@+id/score_fragment_header"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

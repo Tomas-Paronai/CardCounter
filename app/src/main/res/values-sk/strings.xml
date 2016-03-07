@@ -26,6 +26,7 @@
     <string name="result_ok">Vyborne!</string>
     <string name="result_wrong">Zla odpoved!</string>
     <string name="lives_left">Mas uz len %1$d zivotov!</string>
+    <string name="show_score">Body: %1$d</string>
 
     <!-- DIALOG -->
     <string name="cancel_save">Zrusit</string>

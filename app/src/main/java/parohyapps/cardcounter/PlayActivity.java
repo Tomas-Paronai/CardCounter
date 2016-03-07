@@ -32,6 +32,9 @@ public class PlayActivity extends AppCompatActivity {
         EditText input = (EditText) findViewById(R.id.et_user_input);
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
         ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(input.getWindowToken(), 0);
+
+        String scoreString = getResources().getString(R.string.show_score);
+        ((TextView)findViewById(R.id.tw_score_text)).setText(String.format(scoreString, game.getScore()));
     }
 
     private void generateGameState(){
@@ -169,11 +172,14 @@ public class PlayActivity extends AppCompatActivity {
 
         if(!userInput.getText().toString().equals("")){
             if(userInput.getText().toString().equals(String.valueOf(getResult()))){
-                gameMessage.setText(getResources().getIdentifier("result_ok", "string", getPackageName()));
+                gameMessage.setText(R.string.result_ok);
                 game.addScore(Math.abs(result));
+
+                String scoreString = getResources().getString(R.string.show_score);
+                ((TextView)findViewById(R.id.tw_score_text)).setText(String.format(scoreString,game.getScore()));
             }
             else{
-                gameMessage.setText(getResources().getIdentifier("result_wrong","string",getPackageName()));
+                gameMessage.setText(R.string.result_wrong);
                 game.takeLife();
                 Toast.makeText(this,String.format(getResources().getString(R.string.lives_left),game.getLives()),Toast.LENGTH_SHORT).show();
             }

@@ -96,12 +96,18 @@ public class ScoreHandler {
         if(resultList != null){
             Log.d("LOAD FILE","ASCENDING");
             int max = resultList.size();
-            for(int i = 0; i <= max-1; i++){
-                for(int j = i; j < max; j++){
-                    if(list.get(i).getScore() < resultList.get(j).getScore()){
-                        Score tmp = resultList.get(i);
-                        resultList.set(i,list.get(j));
-                        resultList.set(j, tmp);
+
+            boolean flag = true;
+            int j;
+            Score tmp;
+            while(flag){
+                flag = false;
+                for(j = 0; j < max-1; j++){
+                    if(resultList.get(j).getScore() < resultList.get(j+1).getScore()){
+                        tmp = resultList.get(j);
+                        resultList.set(j,resultList.get(j+1));
+                        resultList.set(j+1,tmp);
+                        flag = true;
                     }
                 }
             }

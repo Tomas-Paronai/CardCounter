@@ -26,6 +26,7 @@
     <string name="result_ok">Gratulalok!</string>
     <string name="result_wrong">Rossz valasz!</string>
     <string name="lives_left">Mar csak %1$d van!</string>
+    <string name="show_score">Pontok: %1$d</string>
 
     <!-- DIALOG -->
     <string name="cancel_save">Megse</string>

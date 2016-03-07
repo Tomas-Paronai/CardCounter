@@ -15,8 +15,6 @@ public class Game {
     private boolean left;
     private int leftCard;
     private int rightCard;
-    private boolean leftNegative;
-    private boolean rightNegative;
 
     private int score;
     private int lives;
@@ -24,6 +22,7 @@ public class Game {
     public Game()
     {
         lives = 3;
+        left = true;
     }
     public String getLeftCard(){
         leftCard = randInt(1,13);
@@ -43,14 +42,6 @@ public class Game {
 
     public int getRightCardNumber(){
         return rightCard;
-    }
-
-    public boolean isLeftNegative(){
-        return leftNegative;
-    }
-
-    public boolean isRightNegative(){
-        return rightNegative;
     }
 
     public void addScore(int score){
@@ -117,12 +108,17 @@ public class Game {
         if(type == DIAMONDS || type == HEARTS){
             if(left){
                 leftCard *= -1;
-                left = false;
             }
             else{
                 rightCard *= -1;
-                left = true;
             }
+        }
+
+        if(left){
+            left = false;
+        }
+        else{
+            left = true;
         }
     }
 

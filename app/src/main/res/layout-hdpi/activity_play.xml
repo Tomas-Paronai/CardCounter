@@ -10,15 +10,26 @@
 
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tw_score_text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/snow_white"
+        android:text="5000"/>
+
+    <TextView
         android:id="@+id/game_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="@color/yellow"
         android:text="Hello World!"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tw_score_text"
+        android:layout_marginTop="2dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
         android:visibility="invisible"/>
 
     <TextView
